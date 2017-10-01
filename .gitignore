@@ -1,0 +1,6 @@
+.gitignore
+.idea/
+build.sbt
+project/
+src/
+target/
