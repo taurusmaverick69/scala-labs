@@ -21,7 +21,6 @@ object Main extends App {
 
 
 
-
   //FUNCTIONS
   //no need to return, no need to set type of return value
   def add(a: Int, b: Int) = a + b
@@ -36,12 +35,4 @@ object Main extends App {
 
   println(x2(3))
   myPrint("TEST")
-
-
-
-
-
-
 }
-
-
