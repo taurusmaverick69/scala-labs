@@ -1,7 +1,4 @@
-import java.util.TimeZone
-import javax.lang.model.`type`.ArrayType
-
-object Main extends App {
+object Tutorial extends App {
   print("hello-world")
 
 
@@ -60,21 +57,4 @@ object Main extends App {
 
   val intToInt: (Int) => Int = sum(_, 10)
   println(intToInt(30))
-
-
-  TimeZone.getAvailableIDs()
-    .filter((s) => s.startsWith("America/"))
-    .map((s) => s.replace("America/", ""))
-    .sorted()
-    .forEach((s) => println(s))
-
-
-
-//  val test: String = "Mississippi"
-//  test
-//    .chars()
-//    .boxed()
-//    .map((c) => c.intValue().toChar)
-
-
 }
