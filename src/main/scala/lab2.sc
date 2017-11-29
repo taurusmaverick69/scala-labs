@@ -94,8 +94,6 @@ class CheckingAccount(initialBalance: Double) extends BankAccount(initialBalance
 class SavingsAccount(initialBalance: Double) extends BankAccount(initialBalance: Double){
 
 
-  earnMonthlyInterest
-
 }
 
 
