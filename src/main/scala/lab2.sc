@@ -63,7 +63,7 @@ object TestEnum extends Enumeration {
 
 
 class BankAccount(initialBalance: Double) {
-  protected var balance = initialBalance
+  private var balance = initialBalance
 
   def deposit(amount: Double) = {
     balance += amount
@@ -80,14 +80,12 @@ class CheckingAccount(initialBalance: Double) extends BankAccount(initialBalance
 
   override def deposit(amount: Double) = {
     super.deposit(amount)
-    balance -= 1.0
-    balance
+    super.withdraw(1)
   }
 
   override def withdraw(amount: Double) = {
     super.withdraw(amount)
-    balance -= 1.0
-    balance
+    super.withdraw(1)
   }
 }
 
@@ -101,6 +99,7 @@ val bankAccount = new BankAccount(100)
 bankAccount.deposit(60)
 val checkingAccount = new CheckingAccount(100)
 checkingAccount.withdraw(60)
+checkingAccount.withdraw(10)
 
 
 abstract class Shape {

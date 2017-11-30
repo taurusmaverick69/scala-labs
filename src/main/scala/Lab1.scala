@@ -1,4 +1,4 @@
-import java.util.TimeZone
+import java.util.{Calendar, TimeZone}
 
 import scala.collection.JavaConversions._
 import scala.io.Source
@@ -56,6 +56,18 @@ object Lab1 {
     val itemsWithDiscount = items.transform((_, value) => value * 0.9)
     println(items)
     println(itemsWithDiscount)
+  }
+
+  private def task10(): Unit = {
+    Map(
+      Calendar.MONDAY -> "Monday",
+      Calendar.TUESDAY -> "Tuesday",
+      Calendar.WEDNESDAY -> "Wednesday",
+      Calendar.THURSDAY -> "Thursday",
+      Calendar.FRIDAY -> "Friday",
+      Calendar.SATURDAY -> "Saturday",
+      Calendar.SUNDAY -> "Sunday")
+      .toSeq.sortBy(_._1).foreach(println)
   }
 
   private def task11(fileName: String): Map[String, Int] = {
