@@ -38,6 +38,11 @@ object Lab1 {
     println(arr.deep.mkString)
   }
 
+  private def task6(array: Array[Int]): Unit = {
+    val tuple = array.partition(_ > 0)
+    Array(tuple._1, tuple._2).flatten.foreach(println)
+  }
+
   private def task7(array: Array[Int]): Array[Int] = {
     array.distinct
   }
