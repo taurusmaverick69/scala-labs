@@ -1,6 +1,6 @@
 class Time(val hrs: Int, val min: Int) {
 
-  if (hrs < 0 || hrs > 23 || min < 0 && min > 59)
+  if (hrs < 0 || hrs > 23 || min < 0 || min > 59)
     throw new IllegalArgumentException("Incorrect data")
 
   def before(other: Time): Boolean = {
@@ -55,11 +55,22 @@ object Car {
 
 Car("nokia", "mode")
 
-object TestEnum extends Enumeration {
+object Color extends Enumeration {
 
-  val TOP, BOTTOM, LEFT, RIGHT = Value
+
+  type Color = Value
+  val RED = Value("256")
+  val GREEN = Value("")
+  val BLUE = Value("")
+  val YELLOW = Value("")
+  val RED1 = Value("")
+  val GREEN2 = Value("")
+  val BLUE2 = Value("")
+  val YELLOW3 = Value("")
 
 }
+
+Color.RED
 
 
 class BankAccount(initialBalance: Double) {
@@ -72,6 +83,10 @@ class BankAccount(initialBalance: Double) {
 
   def withdraw(amount: Double) = {
     balance -= amount
+    balance
+  }
+
+  def getBalance: Double = {
     balance
   }
 }
@@ -89,9 +104,38 @@ class CheckingAccount(initialBalance: Double) extends BankAccount(initialBalance
   }
 }
 
-class SavingsAccount(initialBalance: Double) extends BankAccount(initialBalance: Double){
+class SavingsAccount(initialBalance: Double) extends BankAccount(initialBalance: Double) {
+
+  private var count = 3
+
+  override def deposit(amount: Double) = {
+    if (count == 0) {
+      super.deposit(amount)
+      super.withdraw(1)
+    } else {
+      count -= 1
+      super.deposit(amount)
+    }
+  }
+
+  override def withdraw(amount: Double) = {
+    if (count == 0) {
+      super.withdraw(amount)
+      super.withdraw(1)
+    } else {
+      count -= 1
+      super.withdraw(amount)
+    }
+  }
+
+  //sceduled
+  def earnMonthlyInterest(): Unit = {
+    count = 3
+    deposit(getBalance * 10)
+  }
 
 
+  override def toString = s"SavingsAccount(count = $count, balance = $getBalance)"
 }
 
 
@@ -100,6 +144,17 @@ bankAccount.deposit(60)
 val checkingAccount = new CheckingAccount(100)
 checkingAccount.withdraw(60)
 checkingAccount.withdraw(10)
+
+
+val savingsAccount = new SavingsAccount(100)
+
+savingsAccount.deposit(2)
+savingsAccount.deposit(2)
+savingsAccount.deposit(2)
+savingsAccount.deposit(2)
+savingsAccount.earnMonthlyInterest()
+
+savingsAccount
 
 
 abstract class Shape {
