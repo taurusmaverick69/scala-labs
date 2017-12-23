@@ -1,3 +1,5 @@
+import scala.collection.mutable
+
 class Time(val hrs: Int, val min: Int) {
 
   if (hrs < 0 || hrs > 23 || min < 0 || min > 59)
@@ -14,6 +16,19 @@ class Time(val hrs: Int, val min: Int) {
 val time1 = new Time(6, 30)
 val time2 = new Time(6, 31)
 time1.before(time2)
+
+
+class Time1(val hrs: Int, val min: Int) {
+
+  if (hrs < 0 || hrs > 23 || min < 0 || min > 59)
+    throw new IllegalArgumentException("Incorrect data")
+
+  private val generalMin = hrs * 60 + min
+
+  def before(other: Time1): Boolean = {
+    generalMin >= other.generalMin
+  }
+}
 
 
 class Person(var data: String) {
@@ -57,20 +72,16 @@ Car("nokia", "mode")
 
 object Color extends Enumeration {
 
+  val RED = Value(0x000323, "Red")
 
-  type Color = Value
-  val RED = Value("256")
-  val GREEN = Value("")
-  val BLUE = Value("")
-  val YELLOW = Value("")
-  val RED1 = Value("")
-  val GREEN2 = Value("")
-  val BLUE2 = Value("")
-  val YELLOW3 = Value("")
 
 }
 
-Color.RED
+Color.RED.toString
+
+//Color.values.map(_.id).foreach(println)
+
+val set = mutable.HashSet
 
 
 class BankAccount(initialBalance: Double) {
@@ -131,7 +142,7 @@ class SavingsAccount(initialBalance: Double) extends BankAccount(initialBalance:
   //sceduled
   def earnMonthlyInterest(): Unit = {
     count = 3
-    deposit(getBalance * 10)
+    deposit(getBalance * 0.1)
   }
 
 
@@ -158,20 +169,22 @@ savingsAccount
 
 
 abstract class Shape {
-  def centerPoint()
+  def centerPoint() : (Double, Double)
 }
 
 class Rectangle extends Shape {
 
-  def centerPoint(): Unit = {
+  def centerPoint(): (Double, Double) = {
 
+    (1.0, 1.0)
   }
 
 }
 
 class Circle extends Shape {
 
-  def centerPoint(): Unit = {
+  def centerPoint(): (Double, Double) = {
 
+    (1.0,1.0)
   }
 }

@@ -1,11 +1,15 @@
+import java.util.HashSet
 import java.util.{Calendar, TimeZone}
 
 import scala.collection.JavaConversions._
+import scala.collection.immutable.HashSet
 import scala.io.Source
 
 object Lab1 {
 
   def main(args: Array[String]): Unit = {
+
+    Console.in.lines().forEach(println(_))
   }
 
   private def task1(a: Int): Int = {
