@@ -1,8 +1,6 @@
-import java.util.HashSet
 import java.util.{Calendar, TimeZone}
 
 import scala.collection.JavaConversions._
-import scala.collection.immutable.HashSet
 import scala.io.Source
 
 object Lab1 {

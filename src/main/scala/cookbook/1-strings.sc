@@ -62,6 +62,7 @@ println(s"You are 33 years old: ${age == 33}")
 
 
 case class Student(name: String, score: Int)
+
 val hannah = Student("Hannah", 95)
 println(s"${hannah.name} has a score of ${hannah.score}")
 
@@ -82,14 +83,14 @@ val testS = "%s is %d years old".format(name, age)
 "hello, world".filter(_ != 'l').map(_.toUpper)
 
 // first example
-"HELLO".map(c => (c.toByte+32).toChar)
+"HELLO".map(c => (c.toByte + 32).toChar)
 // second example
-"HELLO".map{ c =>
-  (c.toByte+32).toChar
+"HELLO".map { c =>
+  (c.toByte + 32).toChar
 }
 
 // write your own method that operates on a character
-def toLower(c: Char): Char = (c.toByte+32).toChar
+def toLower(c: Char): Char = (c.toByte + 32).toChar
 "HELLO".map(toLower)
 
 

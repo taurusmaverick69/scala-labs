@@ -169,7 +169,7 @@ savingsAccount
 
 
 abstract class Shape {
-  def centerPoint() : (Double, Double)
+  def centerPoint(): (Double, Double)
 }
 
 class Rectangle extends Shape {
@@ -185,6 +185,6 @@ class Circle extends Shape {
 
   def centerPoint(): (Double, Double) = {
 
-    (1.0,1.0)
+    (1.0, 1.0)
   }
 }
