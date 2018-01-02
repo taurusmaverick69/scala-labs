@@ -1,7 +1,7 @@
-package other.Lab3
+package other.lab3
 
 //Lab 3
-import other.Lab3
+import other.lab3
 
 import scala.collection.mutable.ArrayBuffer
 
@@ -211,12 +211,12 @@ object Lab3App extends App {
   //7.
   taskPrinter(7)
 
-  val pair1 = new Lab3.Pair(1, "One")
+  val pair1 = new lab3.Pair(1, "One")
   println("Original pair:")
   println(pair1.first.getClass + " : " + pair1.first + " | " + pair1.second.getClass + " : " + pair1.second)
 
 
-  val pair2: Lab3.Pair[String, Int] = pair1.swap()
+  val pair2: lab3.Pair[String, Int] = pair1.swap()
   println("Swapped pair:")
   println(pair2.first.getClass + " : " + pair2.first + " | " + pair2.second.getClass + " : " + pair2.second)
 
@@ -224,12 +224,12 @@ object Lab3App extends App {
   //8.
   taskPrinter(8)
 
-  val pair3 = new Lab3.PairMutable(1, 2)
+  val pair3 = new lab3.PairMutable(1, 2)
   println("Original pair:")
   println(pair3.first + " | " + pair3.second)
 
 
-  val pair4: Lab3.PairMutable[Int] = pair3.swapMutable()
+  val pair4: lab3.PairMutable[Int] = pair3.swapMutable()
   println("Swapped pair:")
   println(pair4.first.getClass + " : " + pair4.first + " | " + pair4.second.getClass + " : " + pair2.second)
 
@@ -240,7 +240,7 @@ object Lab3App extends App {
   var x = (5, "Five")
   println(x._1 + " " + x._2)
 
-  var z = Lab3.Pair.swapTuple(x)
+  var z = lab3.Pair.swapTuple(x)
   println(z._1 + " " + z._2)
 
 
@@ -272,12 +272,12 @@ object Lab3App extends App {
   taskPrinter(11)
 
 
-  var intPair = new Lab3.Pair[Int, Int](1, 2)
+  var intPair = new lab3.Pair[Int, Int](1, 2)
   println("Original")
   println(intPair.first + " " + intPair.second)
 
 
-  var newPair = Lab3.Pair.strictSwap[Int, Int](3, 4)
+  var newPair = lab3.Pair.strictSwap[Int, Int](3, 4)
   println("Modified")
   println(newPair.first + " " + newPair.second)
 

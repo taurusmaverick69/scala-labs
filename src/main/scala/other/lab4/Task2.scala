@@ -1,4 +1,4 @@
-package other.iralab4
+package other.lab4
 
 class Fraction(n: Int, d: Int) {
   private val num: Int = if (d == 0) 1 else n * sign(d) / gcd(n, d);
