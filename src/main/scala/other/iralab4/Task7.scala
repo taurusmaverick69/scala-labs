@@ -1,4 +1,4 @@
-package other.lab4
+package other.iralab4
 
 object Task7 extends App {
 

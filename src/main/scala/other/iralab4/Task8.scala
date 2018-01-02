@@ -1,4 +1,4 @@
-package other.lab4
+package other.iralab4
 
 import scala.collection.mutable
 
