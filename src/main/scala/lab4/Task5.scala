@@ -2,7 +2,7 @@ package lab4
 
 class Matrix(val m: Int, val n: Int) {
 
-  private val value = Array.ofDim[Double](m, n) // многомерный массив
+  private val value = Array.ofDim[Double](m, n)
 
   def update(x: Int, y: Int, v: Double) = value(x)(y) = v
 

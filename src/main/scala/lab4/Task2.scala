@@ -17,15 +17,35 @@ class Fraction(n: Int, d: Int) {
   def +(other: Fraction) = new Fraction((num * other.den) + (den * other.num), den * other.den)
 
   def -(other: Fraction) = new Fraction((num * other.den) - (den * other.num), den * other.den)
+
+  def unary_=(frac: String) = {
+    val strings = frac.split(" ")
+    new Fraction(strings(0).toInt, strings(1).toInt)
+  }
 }
 
 object Fraction extends App {
 
-  val x = new Fraction(2, 4)
-  val y = new Fraction(3, 2)
 
-  println(x + y)
-  println(x - y)
-  println(x * y)
-  println(x / y)
+  def apply(frac: String) = {
+    val strings = frac.split(" ")
+    new Fraction(strings(0).toInt, strings(1).toInt)
+  }
+
+//  var f: Fraction = "15 6"
+  //  f.=:("15 6")
+
+  //  val x = new Fraction(2, 4)
+  //  val y = new Fraction(3, 2)
+  //
+  //  private val fraction = new Fraction(15, 6)
+  //
+  //  println(fraction)
+  //  println(x + y)
+  //  println(x - y)
+  //  println(x * y)
+  //  println(x / y)
+  //
+
+
 }

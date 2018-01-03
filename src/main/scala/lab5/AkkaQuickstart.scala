@@ -239,7 +239,7 @@ object AkkaQuickstart extends App {
   taskPrinter(2)
   println("Inverting image")
 
-  var imgFile = new File("C:\\img.jpg")
+  var imgFile = new File("tree.jpg")
 
   var img = ImageIO.read(imgFile)
 
@@ -248,16 +248,16 @@ object AkkaQuickstart extends App {
   val inverterActor3 = system.actorOf(InverterActor.props())
 
   inverterActor1 ! (500, 1500)
-  inverterActor1 ! "C:\\imgInverted.jpg"
+  inverterActor1 ! "imgInverted.jpg"
   inverterActor1 ! img
 
   inverterActor2 ! (1000, 2500)
-  inverterActor2 ! "C:\\imgInverted.jpg"
+  inverterActor2 ! "imgInverted.jpg"
   inverterActor2 ! img
 
 
   inverterActor3 ! (2000, 2900)
-  inverterActor3 ! "C:\\imgInverted.jpg"
+  inverterActor3 ! "imgInverted.jpg"
   inverterActor3 ! img
 
   taskPrinter(3)
