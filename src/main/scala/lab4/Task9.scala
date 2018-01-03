@@ -1,4 +1,4 @@
-package other.lab4
+package lab4
 
 class Task9 {
   def removeNull(lst: List[Int]): List[Int] = {

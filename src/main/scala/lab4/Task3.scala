@@ -1,4 +1,4 @@
-package other.lab4
+package lab4
 
 class Money(d: Int, c: Int) {
   val dollar: Int = if (c < 99) d else d + c / 100;

@@ -1,7 +1,5 @@
-package other.lab3
+package lab3
 
-//Lab 3
-import other.lab3
 
 import scala.collection.mutable.ArrayBuffer
 

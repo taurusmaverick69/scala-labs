@@ -1,4 +1,4 @@
-package other.lab3
+package lab3
 
 object Pair {
   def swapTuple[T, V](tuple: (T, V)): (V, T) = {

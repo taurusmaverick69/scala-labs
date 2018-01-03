@@ -1,4 +1,4 @@
-package other.lab4
+package lab4
 
 class Table(html: String = "<table><tr>") {
   override val toString = html + "</tr></table>"

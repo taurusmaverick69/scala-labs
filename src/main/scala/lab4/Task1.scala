@@ -1,4 +1,4 @@
-package other.lab4
+package lab4
 
 import java.io._
 

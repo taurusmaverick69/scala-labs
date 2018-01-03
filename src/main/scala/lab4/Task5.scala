@@ -1,4 +1,4 @@
-package other.lab4
+package lab4
 
 class Matrix(val m: Int, val n: Int) {
 

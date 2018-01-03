@@ -1,4 +1,4 @@
-package other.lab3
+package lab3
 
 sealed abstract class BinaryTree
 
